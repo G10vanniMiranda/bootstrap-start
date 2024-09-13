@@ -7,6 +7,7 @@
     <title>Login</title>
 </head>
 <body class="d-flex overflow-hidden">
+
     <img class="w-50" src="https://wallpapers.com/images/featured/colorful-phone-background-f4f3nu3p3lwjnyph.jpg" alt="não carregou a imagem">
     <form class="w-50 p-5" >
         <h1 class="text-center">Seja Bem Vindo</h1>
@@ -21,5 +22,89 @@
             <button class="btn btn-outline-warning w-25">Cadastrar</button>
         </div>
     </form>
+
+    <style>
+
+        @media screen and ( max-width: 1920px ) {
+            img{ height: 100vh;}
+            input{ padding: 20px !important; font-size: 25px !important; }
+            .btn{ 
+                padding: 20px !important; 
+                font-size: 25px !important; 
+                width: 200px !important; 
+                
+            }
+            h1{ margin-top: 100px;}
+            .btn{ width: 220px !important; }
+            
+        }
+        
+        @media screen and ( max-width: 800px ) {
+            body{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+                width: 100vw;
+                height: 100vh;
+                background-color: black;
+            }
+            h1{ 
+                margin-top: 120px !important; 
+                margin-bottom: 120px;
+            }
+            .w-50{ 
+                height: 70vh; 
+                width: 90vw !important; 
+                background-color: white;
+                border: 20px solid goldenrod;
+                border-top-right-radius: 200px;
+                border-bottom-right-radius: 200px;
+            }
+            .row{ margin-top: 20px;}
+            .btn{ width: 600px !important; margin-top: 20px;}
+            img{ display: none; }
+        }
+
+        @media screen and ( max-width: 500px ) {
+            body{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+                width: 100vw;
+                height: 100vh;
+                background-color: black;
+            }
+            h1{ 
+                margin-top: 0px !important; 
+                margin-bottom: -10px;
+            }
+            .w-50{ 
+                height: 70vh; 
+                width: 90vw !important; 
+                background-color: white;
+                border: 20px solid goldenrod;
+                border-top-right-radius: 200px;
+                border-bottom-right-radius: 200px;
+            }
+            input{ 
+                font-size: 16px !important;
+                padding: 12px !important;
+             }
+            .row{ 
+                gap: 0 !important;
+                margin: 0px !important;
+                margin-top: 10px; 
+                padding: 3px !important;
+            }
+            .btn{ 
+                width: 600px !important; 
+                padding: 5px !important;
+                margin-top: 20px;
+            }
+            img{ display: none; }
+        }
+    </style>
 </body>
 </html>
