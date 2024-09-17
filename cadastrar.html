@@ -4,50 +4,55 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastrar</title>
 </head>
 <body class="d-flex overflow-hidden">
 
     <img class="w-50" src="https://wallpapers.com/images/featured/colorful-phone-background-f4f3nu3p3lwjnyph.jpg" alt="não carregou a imagem">
     <form class="w-50 p-5" >
-        <h1 class="text-center">Seja Bem Vindo</h1>
+        <h1 class="text-center">Cadastra-se agora </h1>
 
-        <input type="text" placeholder="Digite seu e-mail" id="email" class="form-control mt-5">
+        <input id="nome" type="text" placeholder="Digite nome completo" class="form-control mt-5">
 
-        <input type="password" placeholder="Digite sua senha" id="senha" class="form-control mt-3">
+        <input id="telefone" type="text" placeholder="Digite seu telefone" class="form-control mt-3">
+
+        <input id="email" type="text" placeholder="Digite seu e-mail" class="form-control mt-3">
+
+        <input id="senha" type="password" placeholder="Digite sua senha" class="form-control mt-3">
 
         <div class="row d-flex gap-2 p-3 justify-content-center">
 
-            <button class="btn btn-outline-dark w-25" id="btn-entrar">Entrar</button>
-        
-            <button class="btn btn-outline-warning w-25" id="btn-cadastrar">Cadastrar</button>
+            <button id="btn_salvar" class="btn btn-outline-primary w-25">Salvar</button>
 
+            <a href="./index.html">
+                <button type="button" class="btn btn-outline-danger w-25">Voltar</button>
+            </a>
         </div>
     </form>
 
     <script>
+        var nome = document.getElementById('nome')
+        var telefone = document.getElementById('telefone')
         var email = document.getElementById('email')
         var senha = document.getElementById('senha')
-        var btn_entrar = document.getElementById('btn-entrar')
-        var btn_cadastrar = document.getElementById('btn-cadastrar')
-        
-        btn_entrar.onclick = (e) =>{
+
+        var btn_salvar = document.getElementById('btn_salvar')
+
+        btn_salvar.onclick = (e) => {
             e.preventDefault()
 
-            window.location.href = "./painel.html"
+            if( !nome.value || !telefone.value || !email.value || !senha.value ){
+                alert('Preencher todos os campos')
+                return false
+            }else{
+                alert('Seja bem vindo: ' + nome.value)
+                window.location.href = "./painel.html"
+            }   
         }
-
-        btn_cadastrar.onclick = (e) => {
-            e.preventDefault()
-
-            window.location.href = "./cadastrar.html"
-            
-        }
-        
     </script>
 
     <style>
-
+        
         @media screen and ( max-width: 1920px ) {
             img{ height: 100vh;}
             input{ padding: 20px !important; font-size: 25px !important; }
@@ -118,13 +123,16 @@
             .row{ 
                 gap: 0 !important;
                 margin: 0px !important;
-                margin-top: 10px; 
+                margin-top: 5px !important; 
                 padding: 3px !important;
             }
             .btn{ 
-                width: 600px !important; 
+                width: 200px !important; 
                 padding: 5px !important;
                 margin-top: 20px;
+            }
+            a{
+                margin-left: 15px;
             }
             img{ display: none; }
         }
