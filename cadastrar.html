@@ -9,6 +9,7 @@
 <body class="d-flex overflow-hidden">
 
     <img class="w-50" src="https://wallpapers.com/images/featured/colorful-phone-background-f4f3nu3p3lwjnyph.jpg" alt="não carregou a imagem">
+    
     <form class="w-50 p-5" >
         <h1 class="text-center">Cadastra-se agora</h1>
 
@@ -20,13 +21,11 @@
 
         <input id="senha" type="password" placeholder="Digite sua senha" class="form-control mt-3">
 
-        <div class="row d-flex gap-2 p-3 justify-content-center">
+        <div class="d-flex gap-2 p-3 justify-content-center group-btn">
 
-            <button id="btn_salvar" class="btn btn-outline-primary w-25">Salvar</button>
+            <button id="btn_salvar" class="btn btn-outline-dark w-25">Salvar</button>
 
-            <a href="./index.html">
-                <button type="button" class="btn btn-outline-danger w-25">Voltar</button>
-            </a>
+            <button id="btn_voltar" type="button" class="btn btn-outline-warning w-25">Voltar</button>
         </div>
     </form>
 
@@ -37,6 +36,7 @@
         var senha = document.getElementById('senha')
 
         var btn_salvar = document.getElementById('btn_salvar')
+        var btn_voltar = document.getElementById('btn_voltar')
 
         btn_salvar.onclick = (e) => {
             e.preventDefault()
@@ -49,6 +49,10 @@
                 window.location.href = "./painel.html"
             }   
         }
+
+        btn_voltar.onclick = (e) => {
+            window.location.href = "./index.html"
+        }
     </script>
 
     <style>
@@ -60,38 +64,21 @@
                 padding: 20px !important; 
                 font-size: 25px !important; 
                 width: 200px !important; 
-                
             }
             h1{ margin-top: 100px;}
             .btn{ width: 220px !important; }
             
         }
         
-        @media screen and ( max-width: 800px ) {
-            body{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: row;
-                width: 100vw;
-                height: 100vh;
-                background-color: black;
+        @media screen and ( max-width: 1120px ) {
+            img{ height: 100vh;}
+            input{ padding: 20px !important; font-size: 25px !important; }
+            .btn{ 
+                padding: 20px !important; 
+                font-size: 25px !important; 
+                width: 100% !important; 
             }
-            h1{ 
-                margin-top: 120px !important; 
-                margin-bottom: 120px;
-            }
-            .w-50{ 
-                height: 70vh; 
-                width: 90vw !important; 
-                background-color: white;
-                border: 20px solid goldenrod;
-                border-top-right-radius: 200px;
-                border-bottom-right-radius: 200px;
-            }
-            .row{ margin-top: 20px;}
-            .btn{ width: 600px !important; margin-top: 20px;}
-            img{ display: none; }
+            h1{ margin-top: 100px;}
         }
 
         @media screen and ( max-width: 500px ) {
@@ -119,11 +106,6 @@
             input{ 
                 font-size: 16px !important;
                 padding: 12px !important;
-             }
-            .row{ 
-                gap: 0 !important;
-                margin: 0px !important;
-                margin-top: 5px !important; 
                 padding: 3px !important;
             }
             .btn{ 
@@ -135,6 +117,7 @@
                 margin-left: 20px;
             }
             img{ display: none; }
+            
         }
     </style>
 </body>
