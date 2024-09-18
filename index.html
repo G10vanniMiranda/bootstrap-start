@@ -9,17 +9,16 @@
 <body class="d-flex overflow-hidden">
 
     <img class="w-50" src="https://wallpapers.com/images/featured/colorful-phone-background-f4f3nu3p3lwjnyph.jpg" alt="não carregou a imagem">
+    
     <form class="w-50 p-5" >
         <h1 class="text-center">Seja Bem Vindo</h1>
 
         <input type="text" placeholder="Digite seu e-mail" id="email" class="form-control mt-5">
-
         <input type="password" placeholder="Digite sua senha" id="senha" class="form-control mt-3">
 
         <div class="row d-flex gap-2 p-3 justify-content-center">
 
             <button class="btn btn-outline-dark w-25" id="btn-entrar">Entrar</button>
-        
             <button class="btn btn-outline-warning w-25" id="btn-cadastrar">Cadastrar</button>
 
         </div>
@@ -28,11 +27,38 @@
     <script>
         var email = document.getElementById('email')
         var senha = document.getElementById('senha')
+
         var btn_entrar = document.getElementById('btn-entrar')
         var btn_cadastrar = document.getElementById('btn-cadastrar')
+
+        // criando um email padrão
+        var email_padrao = "admin@gmail.com"
+
+        // criando uma senha padrão
+        var senha_padrao = "123456"
         
         btn_entrar.onclick = (e) =>{
             e.preventDefault()
+
+            if( !email.value ) { // valida se está em branco o email
+                alert('Preencher o email obrigatório')
+                return false
+            }
+
+            if( email.value !== email_padrao ) { // valida se o email é cadastrado
+                alert('Email não encontrado')
+                return false
+            }
+
+            if( !senha.value ) { // valida se o campo está em branco
+                alert('Preencher a senha obrigatória')
+                return false
+            }
+
+            if(senha.value !== senha_padrao ) {
+                alert('Essa senha não é valida!')
+                return false
+            }
 
             window.location.href = "./painel.html"
         }
@@ -41,7 +67,6 @@
             e.preventDefault()
 
             window.location.href = "./cadastrar.html"
-            
         }
         
     </script>
